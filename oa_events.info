@@ -25,6 +25,7 @@ dependencies[] = geofield
 dependencies[] = geofield_map
 dependencies[] = link
 dependencies[] = media
+dependencies[] = message
 dependencies[] = oa_core
 dependencies[] = oa_sections
 dependencies[] = og
