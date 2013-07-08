@@ -343,7 +343,7 @@ function oa_events_send_reminders($nids, $start_date, $end_date) {
       ->execute()
       ->fetchField();
 
-    if (empty($record_found)) {
+    if (empty($record_found) && module_exists('oa_messages')) {
       $message = oa_messages_create('oa_event_notification', $node, 'node', '', array('date' => $next_event), 1);
 
       drupal_write_record('oa_events_notifications_log', $params);
