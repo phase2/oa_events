@@ -20,10 +20,10 @@ projects[colors][download][branch] = 7.x-1.x
 
 projects[date_ical][type] = module
 projects[date_ical][subdir] = contrib
-projects[date_ical][version] = 2.7
 projects[date_ical][download][url] = http://git.drupal.org/project/date_ical.git
 projects[date_ical][download][type] = git
 projects[date_ical][download][branch] = 7.x-2.x
+projects[date_ical][download][revision] = 8da6542
 
 projects[geophp][type] = module
 projects[geophp][subdir] = contrib
