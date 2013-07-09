@@ -24,6 +24,7 @@ projects[date_ical][download][url] = http://git.drupal.org/project/date_ical.git
 projects[date_ical][download][type] = git
 projects[date_ical][download][branch] = 7.x-2.x
 projects[date_ical][download][revision] = 8da6542
+projects[date_ical][patch][2038063] = https://drupal.org/files/date_ical-2038063-1.patch
 
 projects[geophp][type] = module
 projects[geophp][subdir] = contrib
