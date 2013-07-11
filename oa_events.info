@@ -116,3 +116,4 @@ features_exclude[field][node-oa_event-field_oa_media] = node-oa_event-field_oa_m
 features_exclude[field][node-oa_event-oa_section_ref] = node-oa_event-oa_section_ref
 features_exclude[field][node-oa_event-og_group_ref] = node-oa_event-og_group_ref
 features_exclude[field_instance][node-oa_event-field_oa_message_space] = node-oa_event-field_oa_message_space
+project path = sites/all/modules/contrib
