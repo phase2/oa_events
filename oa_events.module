@@ -375,6 +375,8 @@ function oa_events_form_oa_core_configure_form_alter(&$form, &$form_state, $form
   $form['oa_events'] = array(
     '#type' => 'fieldset',
     '#title' => t('Event settings'),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
   );
 
   $form['oa_events']['oa_events_send_reminders'] = array(
