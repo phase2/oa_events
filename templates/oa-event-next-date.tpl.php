@@ -1,3 +1,9 @@
+<?php
+/**
+ * @file
+ * Default template for next event date.
+ */
+?>
 <div class='oa-event-date-next-wrapper'>
   <div class='oa-event-date-next-wrapper'>
     <p class='oa-event-date'>

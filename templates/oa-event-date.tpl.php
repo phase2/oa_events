@@ -1,3 +1,9 @@
+<?php
+/**
+ * @file
+ * Default template for event dates.
+ */
+?>
 <div class='oa-event-date-wrapper'>
   <div class='oa-event-date-month-wrapper'>
     <span class='oa-event-date-month'>
