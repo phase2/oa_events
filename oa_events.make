@@ -9,6 +9,7 @@ projects[fullcalendar][download][url] = http://git.drupal.org/project/fullcalend
 projects[fullcalendar][download][type] = git
 projects[fullcalendar][version] = 2.0
 projects[fullcalendar][download][branch] = 7.x-2.x
+projects[fullcalendar][patch][2044391] = http://drupal.org/files/fullcalendar-legend-entityreference_taxonomy-2044391-1.patch
 
 projects[colors][type] = module
 projects[colors][subdir] = contrib
@@ -16,6 +17,7 @@ projects[colors][download][url] = http://git.drupal.org/project/colors.git
 projects[colors][download][type] = git
 projects[colors][version] = 1.0-rc1
 projects[colors][patch][1814972] = http://drupal.org/files/og-7.x-2.x_0.patch
+projects[colors][patch][2044395] = http://drupal.org/files/colors-entityreference_taxonomy-2044395-1.patch
 projects[colors][download][branch] = 7.x-1.x
 
 projects[date_ical][type] = module
