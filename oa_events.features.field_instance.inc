@@ -495,6 +495,65 @@ http://www.whitehouse.gov/',
     ),
   );
 
+  // Exported field_instance: 'node-oa_event-og_vocabulary'
+  $field_instances['node-oa_event-og_vocabulary'] = array(
+    'bundle' => 'oa_event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'og_vocab',
+        'settings' => array(
+          'concatenate' => FALSE,
+        ),
+        'type' => 'og_vocab',
+        'weight' => 7,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'og_vocabulary',
+    'label' => 'OG vocabulary',
+    'options_limit' => FALSE,
+    'options_limit_empty_behaviour' => 0,
+    'options_limit_fields' => array(),
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'taxonomy-index' => array(
+          'status' => TRUE,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'og_vocab',
+      'settings' => array(),
+      'type' => 'og_vocab_complex',
+      'weight' => 9,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Attachments');
@@ -507,6 +566,7 @@ http://www.whitehouse.gov/',
 1600 Pennsylvania Avenue, NW 
 Washington, DC 20500
 http://www.whitehouse.gov/');
+  t('OG vocabulary');
   t('Open Atrium Section');
 
   return $field_instances;

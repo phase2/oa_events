@@ -30,7 +30,7 @@ function oa_events_panelizer_defaults() {
   $panelizer->link_to_entity = TRUE;
   $panelizer->extra = array();
   $display = new panels_display();
-  $display->layout = 'bryant_flipped_flipped';
+  $display->layout = 'burr_flipped';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -79,6 +79,30 @@ function oa_events_panelizer_defaults() {
     $display->panels['contentmain'][0] = 'new-1';
     $pane = new stdClass();
     $pane->pid = 'new-2';
+    $pane->panel = 'sidebar';
+    $pane->type = 'panels_mini';
+    $pane->subtype = 'section_sidebar_top';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'context' => array(
+        0 => 'panelizer',
+      ),
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-2'] = $pane;
+    $display->panels['sidebar'][0] = 'new-2';
+    $pane = new stdClass();
+    $pane->pid = 'new-3';
     $pane->panel = 'sidebar';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_oa_geo_location';
@@ -132,12 +156,12 @@ function oa_events_panelizer_defaults() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
-    $display->content['new-2'] = $pane;
-    $display->panels['sidebar'][0] = 'new-2';
+    $display->content['new-3'] = $pane;
+    $display->panels['sidebar'][1] = 'new-3';
     $pane = new stdClass();
-    $pane->pid = 'new-3';
+    $pane->pid = 'new-4';
     $pane->panel = 'sidebar';
     $pane->type = 'panels_mini';
     $pane->subtype = 'default_section_sidebar';
@@ -156,10 +180,10 @@ function oa_events_panelizer_defaults() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 2;
     $pane->locks = array();
-    $display->content['new-3'] = $pane;
-    $display->panels['sidebar'][1] = 'new-3';
+    $display->content['new-4'] = $pane;
+    $display->panels['sidebar'][2] = 'new-4';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $panelizer->display = $display;
@@ -199,7 +223,7 @@ function oa_events_panelizer_defaults() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-4';
+    $pane->pid = 'new-5';
     $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
     $pane->subtype = 'oa_fullcalendar-oa_calendar_month';
@@ -223,10 +247,10 @@ function oa_events_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-4'] = $pane;
-    $display->panels['contentmain'][0] = 'new-4';
+    $display->content['new-5'] = $pane;
+    $display->panels['contentmain'][0] = 'new-5';
     $pane = new stdClass();
-    $pane->pid = 'new-5';
+    $pane->pid = 'new-6';
     $pane->panel = 'sidebar';
     $pane->type = 'fullcalendar_legend';
     $pane->subtype = 'fullcalendar_legend';
@@ -246,10 +270,10 @@ function oa_events_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-5'] = $pane;
-    $display->panels['sidebar'][0] = 'new-5';
+    $display->content['new-6'] = $pane;
+    $display->panels['sidebar'][0] = 'new-6';
     $pane = new stdClass();
-    $pane->pid = 'new-6';
+    $pane->pid = 'new-7';
     $pane->panel = 'sidebar';
     $pane->type = 'oa_widgets_content_visibility';
     $pane->subtype = 'oa_widgets_content_visibility';
@@ -274,10 +298,10 @@ function oa_events_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $display->content['new-6'] = $pane;
-    $display->panels['sidebar'][1] = 'new-6';
+    $display->content['new-7'] = $pane;
+    $display->panels['sidebar'][1] = 'new-7';
     $pane = new stdClass();
-    $pane->pid = 'new-7';
+    $pane->pid = 'new-8';
     $pane->panel = 'sidebar';
     $pane->type = 'oa_widgets_add_content';
     $pane->subtype = 'oa_widgets_add_content';
@@ -315,10 +339,10 @@ function oa_events_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();
-    $display->content['new-7'] = $pane;
-    $display->panels['sidebar'][2] = 'new-7';
+    $display->content['new-8'] = $pane;
+    $display->panels['sidebar'][2] = 'new-8';
     $pane = new stdClass();
-    $pane->pid = 'new-8';
+    $pane->pid = 'new-9';
     $pane->panel = 'sidebar';
     $pane->type = 'views_panes';
     $pane->subtype = 'oa_event_list-oa_events_upcoming_small';
@@ -337,8 +361,8 @@ function oa_events_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 3;
     $pane->locks = array();
-    $display->content['new-8'] = $pane;
-    $display->panels['sidebar'][3] = 'new-8';
+    $display->content['new-9'] = $pane;
+    $display->panels['sidebar'][3] = 'new-9';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $panelizer->display = $display;

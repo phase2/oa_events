@@ -42,6 +42,14 @@
 
 .oa-event-description .addthisevent-drop {
   margin: 10px;
+  float: right;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+
+.oa-event-description .flag-subscribe-section-content {
+  display: none;
 }
 
 .oa-event-header .oa-event-icon {
