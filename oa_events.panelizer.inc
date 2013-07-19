@@ -303,47 +303,6 @@ function oa_events_panelizer_defaults() {
     $pane = new stdClass();
     $pane->pid = 'new-8';
     $pane->panel = 'sidebar';
-    $pane->type = 'oa_widgets_add_content';
-    $pane->subtype = 'oa_widgets_add_content';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'oa_widgets_types' => array(
-        'oa_event' => 'oa_event',
-        'oa_group' => 0,
-        'oa_space' => 0,
-        'oa_discussion_post' => 0,
-        'oa_ical_importer' => 0,
-        'oa_section' => 0,
-        'oa_team' => 0,
-        'oa_wiki_page' => 0,
-        'panopoly_page' => 0,
-      ),
-      'oa_widgets_use_all' => TRUE,
-      'button_class' => '',
-      'title_prefix' => '',
-      'return' => 'Finish',
-      'cancel' => 'Cancel',
-      'override_title' => 0,
-      'override_title_text' => '',
-      'form_build_id' => 'form-dBHY802mYH-8WpPalEy73aThF29zzTDXi5oXg_Zl320',
-      'form_token' => 'Cx-Y6qbYfaLV6ZOAroLCWbJsDaOczlCud9Tij4GSkW4',
-      'form_id' => 'oa_widgets_add_content_edit_form',
-      'op' => 'Finish',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $display->content['new-8'] = $pane;
-    $display->panels['sidebar'][2] = 'new-8';
-    $pane = new stdClass();
-    $pane->pid = 'new-9';
-    $pane->panel = 'sidebar';
     $pane->type = 'views_panes';
     $pane->subtype = 'oa_event_list-oa_events_upcoming_small';
     $pane->shown = TRUE;
@@ -359,10 +318,10 @@ function oa_events_panelizer_defaults() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 3;
+    $pane->position = 2;
     $pane->locks = array();
-    $display->content['new-9'] = $pane;
-    $display->panels['sidebar'][3] = 'new-9';
+    $display->content['new-8'] = $pane;
+    $display->panels['sidebar'][2] = 'new-8';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $panelizer->display = $display;
