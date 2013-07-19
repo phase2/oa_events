@@ -72,7 +72,7 @@ function oa_events_field_add_to_calendar_markup($nid, $items, $title = 'Add to C
 
   $link_content = $title;
   $event_url = url('node/' . $node->nid, array('absolute' => TRUE));
-  $description = isset($node->body[$node->language][0]) ? $node->body[$node->language][0]['safe_value'] : '';
+  $description = !empty($node->body[$node->language][0]['safe_value']) ? strip_tags($node->body[$node->language][0]['safe_value']) : '';
   $spans = array(
     '_url' => $event_url,
     '_start' => date_format_date($date_field_date1, 'custom', 'm-d-Y H:i:s'),
