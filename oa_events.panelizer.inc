@@ -312,6 +312,13 @@ function oa_events_panelizer_defaults() {
       'view_settings' => 'fields',
       'header_type' => 'none',
       'view_mode' => 'teaser',
+      'exposed' => array(
+        'og_group_ref_target_id' => '',
+        'og_group_ref_target_id_mine' => 0,
+        'og_subspaces_view_all' => FALSE,
+        'oa_section_ref_target_id' => '',
+      ),
+      'items_per_page' => '10',
     );
     $pane->cache = array();
     $pane->style = array(
