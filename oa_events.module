@@ -203,7 +203,7 @@ function oa_events_field_formatter_view($entity_type, $entity, $field, $instance
       // widget at some point in the future.
       $day = $dates['start']['day'];
 
-      $element[$delta] = array(
+      $element[0] = array(
         '#markup' => theme('oa_event_date', array('month' => $dates['start']['month'], 'day' => $day)),
       );
     }
