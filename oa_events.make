@@ -8,6 +8,7 @@ projects[fullcalendar][subdir] = contrib
 projects[fullcalendar][download][url] = http://git.drupal.org/project/fullcalendar.git
 projects[fullcalendar][download][type] = git
 projects[fullcalendar][download][revision] = aee5cb9
+projects[fullcalendar][download][branch] = 7.x-2.x
 projects[fullcalendar][patch][2044391] = http://drupal.org/files/fullcalendar-legend-entityreference_taxonomy-2044391-1.patch
 
 projects[colors][type] = module
