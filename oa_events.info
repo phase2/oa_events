@@ -2,7 +2,6 @@ name = Open Atrium Events
 description = Event Calendar for Open Atrium
 core = 7.x
 package = Open Atrium
-php = 5.2.4
 dependencies[] = colors
 dependencies[] = ctools
 dependencies[] = date
