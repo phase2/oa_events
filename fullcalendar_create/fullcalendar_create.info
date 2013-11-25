@@ -1,0 +1,4 @@
+name = FullCalendar Create
+core = 7.x
+dependencies[] = fullcalendar
+package = FullCalendar
