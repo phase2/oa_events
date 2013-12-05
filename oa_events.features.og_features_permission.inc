@@ -18,68 +18,8 @@ function oa_events_og_features_default_permissions() {
     ),
   );
 
-  // Exported og permission: 'node:oa_group:delete any oa_event content'
-  $permissions['node:oa_group:delete any oa_event content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:oa_group:delete own oa_event content'
-  $permissions['node:oa_group:delete own oa_event content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:oa_group:update any oa_event content'
-  $permissions['node:oa_group:update any oa_event content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:oa_group:update own oa_event content'
-  $permissions['node:oa_group:update own oa_event content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
   // Exported og permission: 'node:oa_space:create oa_event content'
   $permissions['node:oa_space:create oa_event content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:oa_space:delete any oa_event content'
-  $permissions['node:oa_space:delete any oa_event content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:oa_space:delete own oa_event content'
-  $permissions['node:oa_space:delete own oa_event content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:oa_space:update any oa_event content'
-  $permissions['node:oa_space:update any oa_event content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:oa_space:update own oa_event content'
-  $permissions['node:oa_space:update own oa_event content'] = array(
     'roles' => array(
       'administrator member' => 'administrator member',
       'member' => 'member',
