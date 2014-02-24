@@ -202,15 +202,13 @@ function oa_events_field_formatter_view($entity_type, $entity, $field, $instance
       ),
     );
 
-    if ($dates['start']['month'] == $dates['end']['month']) {
-      // For now always use the start date. We may add multi-day event to the
-      // widget at some point in the future.
-      $day = $dates['start']['day'];
-
-      $element[0] = array(
-        '#markup' => theme('oa_event_date', array('month' => $dates['start']['month'], 'day' => $day)),
-      );
-    }
+    // For now always use the start date. We may add multi-day event to the
+    // widget at some point in the future.
+    $day = $dates['start']['day'];
+    $month = $dates['start']['month'];
+    $element[0] = array(
+      '#markup' => theme('oa_event_date', array('month' => $month, 'day' => $day)),
+    );
   }
   elseif ($display['type'] == 'oa_events_upcoming_date') {
     $event_info = oa_events_find_next_event($items);
