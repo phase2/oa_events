@@ -54,6 +54,7 @@ features[field_instance][] = node-oa_event-field_oa_address
 features[field_instance][] = node-oa_event-field_oa_date
 features[field_instance][] = node-oa_event-field_oa_geo_location
 features[field_instance][] = node-oa_event-field_oa_media
+features[field_instance][] = node-oa_event-oa_other_spaces_ref
 features[field_instance][] = node-oa_event-oa_section_ref
 features[field_instance][] = node-oa_event-og_group_ref
 features[field_instance][] = node-oa_event-og_vocabulary
