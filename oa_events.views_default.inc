@@ -917,6 +917,11 @@ function oa_events_views_default_views() {
   $handler->display->display_options['style_options']['advanced'] = TRUE;
   $handler->display->display_options['style_options']['timeformatMonth'] = 'h(:mm)t';
   $handler->display->display_options['style_options']['sameWindow'] = TRUE;
+  $handler->display->display_options['style_options']['fullcalendar_create']['select'] = TRUE;
+  $handler->display->display_options['style_options']['fullcalendar_create']['node_type'] = 'oa_event';
+  $handler->display->display_options['style_options']['fullcalendar_create']['date_field'] = array(
+    'field_oa_date' => 'field_oa_date',
+  );
   $handler->display->display_options['style_options']['fullcalendar_options']['dayClickView'] = 'agendaDay';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -1091,10 +1096,12 @@ function oa_events_views_default_views() {
 
   /* Display: iCal */
   $handler = $view->new_display('feed', 'iCal', 'oa_calendar_ical');
-  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '20';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'date_ical';
   $handler->display->display_options['style_options']['cal_name'] = '';
+  $handler->display->display_options['style_options']['disable_webcal'] = TRUE;
   $handler->display->display_options['row_plugin'] = 'date_ical';
   $handler->display->display_options['row_options']['date_field'] = 'field_data_field_oa_date.field_oa_date_value';
   $handler->display->display_options['row_options']['summary_field'] = 'field_data_body.body';
@@ -1106,7 +1113,6 @@ function oa_events_views_default_views() {
     'oa_calendar_day' => 0,
     'oa_calendar_week' => 0,
   );
-
   $export['oa_fullcalendar'] = $view;
 
   return $export;
