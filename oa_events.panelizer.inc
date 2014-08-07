@@ -248,6 +248,7 @@ function oa_events_panelizer_defaults() {
       'header_type' => 'none',
       'view_mode' => 'teaser',
       'include_attachments' => 1,
+      'show_exposed_form' => 0,
     );
     $pane->cache = array();
     $pane->style = array(
@@ -333,6 +334,7 @@ function oa_events_panelizer_defaults() {
         'flagged' => '0',
       ),
       'items_per_page' => '10',
+      'show_exposed_form' => 0,
     );
     $pane->cache = array();
     $pane->style = array(
