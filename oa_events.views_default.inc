@@ -1261,5 +1261,178 @@ function oa_events_views_default_views() {
   );
   $export['oa_fullcalendar'] = $view;
 
+  $view = new view();
+  $view->name = 'open_atrium_event_location';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Open Atrium Event Location';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Event Locations';
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'oa_form';
+  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['expose_sort_order'] = FALSE;
+  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['collapsed_filter'] = 1;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '100';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'geofield_map_map';
+  $handler->display->display_options['style_options']['data_source'] = 'field_oa_geo_location';
+  $handler->display->display_options['style_options']['popup_source'] = 'nothing';
+  /* Relationship: Flags: trash */
+  $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'node';
+  $handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel']['label'] = 'archived';
+  $handler->display->display_options['relationships']['flag_content_rel']['required'] = 0;
+  $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'trash';
+  $handler->display->display_options['relationships']['flag_content_rel']['user_scope'] = 'any';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Geocoded Location */
+  $handler->display->display_options['fields']['field_oa_geo_location']['id'] = 'field_oa_geo_location';
+  $handler->display->display_options['fields']['field_oa_geo_location']['table'] = 'field_data_field_oa_geo_location';
+  $handler->display->display_options['fields']['field_oa_geo_location']['field'] = 'field_oa_geo_location';
+  $handler->display->display_options['fields']['field_oa_geo_location']['label'] = 'Location';
+  $handler->display->display_options['fields']['field_oa_geo_location']['click_sort_column'] = 'geom';
+  $handler->display->display_options['fields']['field_oa_geo_location']['settings'] = array(
+    'data' => 'full',
+  );
+  /* Field: Content: Event Date */
+  $handler->display->display_options['fields']['field_oa_date']['id'] = 'field_oa_date';
+  $handler->display->display_options['fields']['field_oa_date']['table'] = 'field_data_field_oa_date';
+  $handler->display->display_options['fields']['field_oa_date']['field'] = 'field_oa_date';
+  $handler->display->display_options['fields']['field_oa_date']['label'] = 'Date';
+  $handler->display->display_options['fields']['field_oa_date']['settings'] = array(
+    'format_type' => 'long',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_repeat_rule' => 'show',
+  );
+  $handler->display->display_options['fields']['field_oa_date']['delta_offset'] = '0';
+  /* Field: Content: Location */
+  $handler->display->display_options['fields']['field_oa_address']['id'] = 'field_oa_address';
+  $handler->display->display_options['fields']['field_oa_address']['table'] = 'field_data_field_oa_address';
+  $handler->display->display_options['fields']['field_oa_address']['field'] = 'field_oa_address';
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = 'Popup Text';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<b>[title]</b><br>[field_oa_address][field_oa_date]';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Sort criterion: Content: Event Date -  start date (field_oa_date) */
+  $handler->display->display_options['sorts']['field_oa_date_value']['id'] = 'field_oa_date_value';
+  $handler->display->display_options['sorts']['field_oa_date_value']['table'] = 'field_data_field_oa_date';
+  $handler->display->display_options['sorts']['field_oa_date_value']['field'] = 'field_oa_date_value';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'oa_event' => 'oa_event',
+  );
+  /* Filter criterion: Content: Groups audience (og_group_ref) */
+  $handler->display->display_options['filters']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
+  $handler->display->display_options['filters']['og_group_ref_target_id']['table'] = 'og_membership';
+  $handler->display->display_options['filters']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
+  $handler->display->display_options['filters']['og_group_ref_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['operator_id'] = 'og_group_ref_target_id_op';
+  $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['label'] = 'Space';
+  $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['operator'] = 'og_group_ref_target_id_op';
+  $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['identifier'] = 'og_group_ref_target_id';
+  $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+  );
+  /* Filter criterion: Content: Open Atrium Section (oa_section_ref) */
+  $handler->display->display_options['filters']['oa_section_ref_target_id']['id'] = 'oa_section_ref_target_id';
+  $handler->display->display_options['filters']['oa_section_ref_target_id']['table'] = 'field_data_oa_section_ref';
+  $handler->display->display_options['filters']['oa_section_ref_target_id']['field'] = 'oa_section_ref_target_id';
+  $handler->display->display_options['filters']['oa_section_ref_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['oa_section_ref_target_id']['expose']['operator_id'] = 'oa_section_ref_target_id_op';
+  $handler->display->display_options['filters']['oa_section_ref_target_id']['expose']['label'] = 'Section';
+  $handler->display->display_options['filters']['oa_section_ref_target_id']['expose']['operator'] = 'oa_section_ref_target_id_op';
+  $handler->display->display_options['filters']['oa_section_ref_target_id']['expose']['identifier'] = 'oa_section_ref_target_id';
+  $handler->display->display_options['filters']['oa_section_ref_target_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+  );
+  /* Filter criterion: Content: Event Date - end date (field_oa_date:value2) */
+  $handler->display->display_options['filters']['field_oa_date_value2']['id'] = 'field_oa_date_value2';
+  $handler->display->display_options['filters']['field_oa_date_value2']['table'] = 'field_data_field_oa_date';
+  $handler->display->display_options['filters']['field_oa_date_value2']['field'] = 'field_oa_date_value2';
+  $handler->display->display_options['filters']['field_oa_date_value2']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_oa_date_value2']['form_type'] = 'date_text';
+  $handler->display->display_options['filters']['field_oa_date_value2']['default_date'] = 'today';
+  /* Filter criterion: Flags: Flagged */
+  $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['table'] = 'flag_content';
+  $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['filters']['flagged']['value'] = '0';
+  $handler->display->display_options['filters']['flagged']['expose']['operator_id'] = '';
+  $handler->display->display_options['filters']['flagged']['expose']['label'] = 'Include archived content';
+  $handler->display->display_options['filters']['flagged']['expose']['operator'] = 'flagged_op';
+  $handler->display->display_options['filters']['flagged']['expose']['identifier'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+  );
+
+  /* Display: Event Location */
+  $handler = $view->new_display('panel_pane', 'Event Location', 'oa_event_location_pane');
+  $handler->display->display_options['pane_category']['name'] = 'Open Atrium Events';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 'exposed_form';
+  $handler->display->display_options['allow']['exposed_form_configure'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
+  $handler->display->display_options['exposed_form_overrides'] = array(
+    'filters' => array(
+      'og_group_ref_target_id' => 'pane_and_exposed',
+      'oa_section_ref_target_id' => 'pane_and_exposed',
+    ),
+  );
+  $handler->display->display_options['inherit_panels_path'] = '1';
+  $export['open_atrium_event_location'] = $view;
+
   return $export;
 }
