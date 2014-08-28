@@ -8,7 +8,7 @@
 }
 
 .oa-event-date-month-wrapper {
-  height: 25%;
+  height: 1.5em;
   background: #4791FF;
   margin: 2px;
 }
@@ -26,7 +26,6 @@
 
 
 .oa-event-date-day-wrapper {
-  height: 80%;
 }
 
 .oa-event-label {
@@ -35,8 +34,8 @@
 
 .oa-event-date-day {
   display: block;
-  padding-top: 20%;
   font-size: 2.5em;
+  line-height: 110%;
   text-align: center;
 }
 
