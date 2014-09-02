@@ -11,7 +11,7 @@
       if ($required.length) {
         // Move the required markers up to the block title
         $required = $required.detach();
-        $('.node-oa_event-form .fieldset-legend').append($required[0]);
+        $('.node-oa_event-form #edit-field-oa-date .fieldset-legend').append($required[0]);
       }
 
       // update the end date when the start date is changed
