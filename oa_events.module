@@ -182,13 +182,19 @@ function oa_events_field_formatter_view($entity_type, $entity, $field, $instance
   if ($display['type'] == 'oa_events_addthis') {
     $element[0]['#markup'] = oa_events_field_add_to_calendar_markup($entity->nid, $items, t('Add to Calendar'));
   }
-  else if ($display['type'] == 'oa_events_date_formatter') {
+  elseif ($display['type'] == 'oa_events_date_formatter') {
 
     $event_info = oa_events_find_next_event($items);
-    $item = $event_info['event'];
+    $event = $event_info['event'];
+    
     // Create Date objects from item values.
-    $start_date = new DateObject($item['value'], $item['timezone'], DATE_FORMAT_UNIX);
-    $end_date = new DateObject($item['value2'], $item['timezone'], DATE_FORMAT_UNIX);
+    $timezone_object = date_default_timezone_object();
+    
+    $start_date = new DateObject($event['value'], $event['timezone_db'], DATE_FORMAT_UNIX);
+    $start_date->setTimezone($timezone_object);
+    
+    $end_date = new DateObject($event['value2'], $event['timezone_db'], DATE_FORMAT_UNIX);
+    $end_date->setTimezone($timezone_object);
 
     // Create an array of month / day information for ease of use.
     $dates = array(
@@ -211,12 +217,19 @@ function oa_events_field_formatter_view($entity_type, $entity, $field, $instance
     );
   }
   elseif ($display['type'] == 'oa_events_upcoming_date') {
+    
     $event_info = oa_events_find_next_event($items);
     $event = $event_info['event'];
 
     // Create Date objects from item values.
-    $start_date = new DateObject($event['value'], $event['timezone'], DATE_FORMAT_UNIX);
-    $end_date = new DateObject($event['value2'], $event['timezone'], DATE_FORMAT_UNIX);
+    $timezone_object = date_default_timezone_object();
+    
+    $start_date = new DateObject($event['value'], $event['timezone_db'], DATE_FORMAT_UNIX);
+    $start_date->setTimezone($timezone_object);
+    
+    $end_date = new DateObject($event['value2'], $event['timezone_db'], DATE_FORMAT_UNIX);
+    $end_date->setTimezone($timezone_object);
+    
     $date_formatted = '';
     $time_formatted = '';
     $rrule = '';
