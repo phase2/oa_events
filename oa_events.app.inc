@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Provides app info for oa wiki.
+ * Provides app info for oa_events.
  */
 
 /**
