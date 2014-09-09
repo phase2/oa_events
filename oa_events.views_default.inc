@@ -1175,8 +1175,9 @@ function oa_events_views_default_views() {
   $handler->display->display_options['style_options']['advanced'] = TRUE;
   $handler->display->display_options['style_options']['timeformatMonth'] = 'h(:mm)t';
   $handler->display->display_options['style_options']['columnformatDay'] = 'dddd, MMM d, yyyy';
-  $handler->display->display_options['style_options']['sameWindow'] = TRUE;
+  $handler->display->display_options['style_options']['theme'] = FALSE;
   $handler->display->display_options['style_options']['contentHeight'] = 480;
+  $handler->display->display_options['style_options']['fullcalendar_create']['node_type'] = 'oa_event';
   $handler->display->display_options['style_options']['fullcalendar_options']['firstHour'] = 8;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
@@ -1213,8 +1214,9 @@ function oa_events_views_default_views() {
   $handler->display->display_options['style_options']['advanced'] = TRUE;
   $handler->display->display_options['style_options']['timeformatMonth'] = 'h(:mm)t';
   $handler->display->display_options['style_options']['columnformatDay'] = 'dddd, MMM d, yyyy';
-  $handler->display->display_options['style_options']['sameWindow'] = TRUE;
+  $handler->display->display_options['style_options']['theme'] = FALSE;
   $handler->display->display_options['style_options']['contentHeight'] = 480;
+  $handler->display->display_options['style_options']['fullcalendar_create']['node_type'] = 'oa_event';
   $handler->display->display_options['style_options']['fullcalendar_options']['firstHour'] = 8;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
