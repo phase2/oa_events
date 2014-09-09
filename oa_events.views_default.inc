@@ -1034,7 +1034,7 @@ function oa_events_views_default_views() {
   $handler->display->display_options['style_options']['right'] = 'today prev,next';
   $handler->display->display_options['style_options']['advanced'] = TRUE;
   $handler->display->display_options['style_options']['timeformatMonth'] = 'h(:mm)t';
-  $handler->display->display_options['style_options']['sameWindow'] = TRUE;
+  $handler->display->display_options['style_options']['theme'] = FALSE;
   $handler->display->display_options['style_options']['fullcalendar_create']['select'] = TRUE;
   $handler->display->display_options['style_options']['fullcalendar_create']['node_type'] = 'oa_event';
   $handler->display->display_options['style_options']['fullcalendar_create']['date_field'] = array(
