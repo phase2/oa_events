@@ -44,6 +44,7 @@ apps[logo] = app/logo.png
 apps[author] = Phase2 Technology
 apps[author_url] = http://www.phase2technology.com/
 apps[server] = openatrium
+apps[package] = Built-in Apps
 features[ctools][] = field_group:field_group:1
 features[ctools][] = page_manager:pages_default:1
 features[ctools][] = panelizer:panelizer:1
