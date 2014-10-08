@@ -1,6 +1,6 @@
 ﻿
 /* AddThisEvent */
-.addthisevent-drop 						{display:inline-block;position:relative;z-index:999998;font-family:arial;color:#333!important;background:#f4f4f4 url(../gfx/icon-calendar-t1.png) no-repeat 9px 50%;text-decoration:none;border:1px solid #d9d9d9;color:#555;font-weight:bold;font-size:14px;text-decoration:none;padding:9px 12px 8px 35px;-moz-border-radius:2px;-webkit-border-radius:2px;}
+.addthisevent-drop 						{display:inline-block;position:relative;z-index:300;font-family:arial;color:#333!important;background:#f4f4f4 url(../gfx/icon-calendar-t1.png) no-repeat 9px 50%;text-decoration:none;border:1px solid #d9d9d9;color:#555;font-weight:bold;font-size:14px;text-decoration:none;padding:9px 12px 8px 35px;-moz-border-radius:2px;-webkit-border-radius:2px;}
 .addthisevent-drop:hover 				{border:1px solid #aab9d4;color:#555;font-weight:bold;font-size:14px;text-decoration:none;}
 .addthisevent-drop:active 				{top:1px;}
 .addthisevent-selected 					{background-color:#f7f7f7;}
