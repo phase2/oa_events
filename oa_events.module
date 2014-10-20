@@ -383,9 +383,7 @@ function oa_events_oa_messages_create_alter($wrapper, $context) {
 }
 
 /**
- * Add plugin-specific configuration to main Open Atrium settings form
- * @param $form_state
- * @param return array - array of subforms render array
+ * Implements hook_oa_settings_form().
  */
 function oa_events_oa_settings_form(&$form_state) {
   $forms = array();
