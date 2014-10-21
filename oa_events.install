@@ -75,6 +75,6 @@ function oa_events_update_7002() {
 /**
  * Update the Calendar section term.
  */
-function oa_events_update_7003() {
+function oa_events_update_7004() {
   oa_events_install_section_type();
 }
