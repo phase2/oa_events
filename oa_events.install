@@ -5,6 +5,28 @@
  */
 
 /**
+ * Implements hook_install().
+ */
+function oa_events_install() {
+  oa_events_install_section_type();
+}
+
+/**
+ * Create the Calendar Section taxonomy term.
+ */
+function oa_events_install_section_type() {
+  $params = array(
+    'description' => 'Allows users to create <em>Events</em> and view them on a calendar.',
+    'node_options' => array(
+      'oa_event',
+    ),
+    'layout' => 'node:oa_section:calendar_section',
+    'icon' => 'icon-calendar',
+  );
+  oa_core_create_term('section_type', 'Calendar Section', $params);
+}
+
+/**
  * Implements hook_schema().
  */
 function oa_events_schema() {
@@ -48,4 +70,11 @@ function oa_events_update_7001() {
  */
 function oa_events_update_7002() {
   module_enable(array('fullcalendar_create'));
+}
+
+/**
+ * Update the Calendar section term.
+ */
+function oa_events_update_7003() {
+  oa_events_install_section_type();
 }

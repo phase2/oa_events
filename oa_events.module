@@ -11,7 +11,6 @@ define('OA_EVENTS_DATE_FORMAT', 'MM/DD/YYYY');
 include_once 'oa_events.features.inc';
 include_once 'oa_events.theme.inc';
 
-
 /**
  * Implements hook_field_formatter_info().
  */
