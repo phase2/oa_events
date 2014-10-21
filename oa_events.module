@@ -75,7 +75,12 @@ function oa_events_field_add_to_calendar_markup($nid, $items, $title = 'Add to C
 
   $link_content = $title;
   $event_url = url('node/' . $node->nid, array('absolute' => TRUE));
-  $description = !empty($node->body[$node->language][0]['safe_value']) ? strip_tags($node->body[$node->language][0]['safe_value']) : '';
+
+  $description_language = field_language('node', $node, 'body');
+  $description = !empty($node->body[$description_language][0]['safe_value']) ? strip_tags($node->body[$description_language][0]['safe_value']) : '';
+  $location_language = field_language('node', $node, 'body');
+  $location = !empty($node->field_oa_address[$location_language][0]['safe_value']) ? strip_tags($node->field_oa_address[$location_language][0]['safe_value']) : '';
+
   $spans = array(
     '_url' => $event_url,
     '_start' => date_format_date($date_field_date1, 'custom', 'm-d-Y H:i:s'),
@@ -83,6 +88,7 @@ function oa_events_field_add_to_calendar_markup($nid, $items, $title = 'Add to C
     '_zonecode' => '35', // UTC
     '_summary' => check_plain($node->title),
     '_description' => $description,
+    '_location' => $location,
     '_all_day_event' => 'false',
     '_date_format' => variable_get('oa_events_date_format', OA_EVENTS_DATE_FORMAT),
   );
@@ -186,13 +192,13 @@ function oa_events_field_formatter_view($entity_type, $entity, $field, $instance
 
     $event_info = oa_events_find_next_event($items);
     $event = $event_info['event'];
-    
+
     // Create Date objects from item values.
     $timezone_object = date_default_timezone_object();
-    
+
     $start_date = new DateObject($event['value'], $event['timezone_db'], DATE_FORMAT_UNIX);
     $start_date->setTimezone($timezone_object);
-    
+
     $end_date = new DateObject($event['value2'], $event['timezone_db'], DATE_FORMAT_UNIX);
     $end_date->setTimezone($timezone_object);
 
@@ -217,19 +223,19 @@ function oa_events_field_formatter_view($entity_type, $entity, $field, $instance
     );
   }
   elseif ($display['type'] == 'oa_events_upcoming_date') {
-    
+
     $event_info = oa_events_find_next_event($items);
     $event = $event_info['event'];
 
     // Create Date objects from item values.
     $timezone_object = date_default_timezone_object();
-    
+
     $start_date = new DateObject($event['value'], $event['timezone_db'], DATE_FORMAT_UNIX);
     $start_date->setTimezone($timezone_object);
-    
+
     $end_date = new DateObject($event['value2'], $event['timezone_db'], DATE_FORMAT_UNIX);
     $end_date->setTimezone($timezone_object);
-    
+
     $date_formatted = '';
     $time_formatted = '';
     $rrule = '';
