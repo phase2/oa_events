@@ -67,6 +67,9 @@ function oa_events_panelizer_defaults() {
       'path' => NULL,
       'view_settings' => 'fields',
       'header_type' => 'none',
+      'context' => array(
+        0 => 'panelizer',
+      ),
     );
     $pane->cache = array();
     $pane->style = array(

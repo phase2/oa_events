@@ -105,7 +105,7 @@ function oa_events_views_default_views() {
   $handler->display->display_options['fields']['body']['settings'] = array(
     'trim_length' => '600',
   );
-  /* Field: Content: Attachments */
+  /* Field: Field: Attachments */
   $handler->display->display_options['fields']['field_oa_media']['id'] = 'field_oa_media';
   $handler->display->display_options['fields']['field_oa_media']['table'] = 'field_data_field_oa_media';
   $handler->display->display_options['fields']['field_oa_media']['field'] = 'field_oa_media';
@@ -125,7 +125,7 @@ function oa_events_views_default_views() {
   $handler->display->display_options['fields']['ops']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['fields']['ops']['label'] = '';
   $handler->display->display_options['fields']['ops']['element_label_colon'] = FALSE;
-  /* Field: Content: Attachments */
+  /* Field: Field: Attachments */
   $handler->display->display_options['fields']['field_oa_media_1']['id'] = 'field_oa_media_1';
   $handler->display->display_options['fields']['field_oa_media_1']['table'] = 'field_data_field_oa_media';
   $handler->display->display_options['fields']['field_oa_media_1']['field'] = 'field_oa_media';
@@ -189,6 +189,16 @@ function oa_events_views_default_views() {
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
   $handler->display->display_options['pane_category']['name'] = 'Open Atrium Events';
   $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['argument_input'] = array(
+    'nid' => array(
+      'type' => 'context',
+      'context' => 'entity:node.nid',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Content: Nid',
+    ),
+  );
 
   /* Display: Event Detail List */
   $handler = $view->new_display('panel_pane', 'Event Detail List', 'event_details_list');
