@@ -275,6 +275,7 @@ http://www.whitehouse.gov/',
   // Exported field_instance: 'node-oa_event-field_oa_media'
   $field_instances['node-oa_event-field_oa_media'] = array(
     'bundle' => 'oa_event',
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -641,6 +642,57 @@ http://www.whitehouse.gov/',
     ),
   );
 
+  // Exported field_instance: 'paragraphs_item-oa_related_event-field_oa_related_event'
+  $field_instances['paragraphs_item-oa_related_event-field_oa_related_event'] = array(
+    'bundle' => 'oa_related_event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'heading',
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => 1,
+          'view_mode' => 'featured',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 0,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_oa_related_event',
+    'label' => 'Related Event',
+    'options_limit' => FALSE,
+    'options_limit_empty_behaviour' => 0,
+    'options_limit_fields' => array(),
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'references_dialog_add' => 1,
+        'references_dialog_edit' => 0,
+        'references_dialog_search' => 1,
+        'references_dialog_search_view' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 1,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Attachments');
@@ -656,6 +708,7 @@ Washington, DC 20500
 http://www.whitehouse.gov/');
   t('OG vocabulary');
   t('Open Atrium Section');
+  t('Related Event');
   t('Select a list of additional Spaces that this piece of content should be visible in. This <em>doesn\'t</em> affect access control - users in the other Spaces must have access to see this content in it\'s main Space for it to be visible to them at all.');
   t('Visible in other Spaces');
 

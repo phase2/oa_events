@@ -80,3 +80,17 @@ function oa_events_node_info() {
   drupal_alter('node_info', $items);
   return $items;
 }
+
+/**
+ * Implements hook_paragraphs_info().
+ */
+function oa_events_paragraphs_info() {
+  $items = array(
+    'oa_related_event' => array(
+      'name' => 'Related Event',
+      'bundle' => 'oa_related_event',
+      'locked' => '1',
+    ),
+  );
+  return $items;
+}
